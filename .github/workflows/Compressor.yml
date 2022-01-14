@@ -23,19 +23,21 @@ jobs:
            git config --global user.name ${{ secrets.GitHubName }}
            git config --global user.email ${{ secrets.GitHubMail }}
            git config --global credential.helper store
-           echo "https://Achu2234:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
+           echo "https://arrshalt:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
            
        
        - name: cloning repo
          continue-on-error: true
          run: |
-           git clone -b main https://Achu2234:${{ secrets.GH_TOKEN }}@github.com/Achu2234/encoderV2.git
+           git clone https://${{ secrets.GH_TOKEN }}@github.com/arrshalt/CompressorQueue.git
        - name: Running PrivateEncoderV2.0 Bot 
          timeout-minutes: 300
          continue-on-error: true
          run: |
-           cd encoderV2
+           cd CompressorQueue
+           pip3 install -r requirements.txt
            docker build -t compressor . && docker run compressor
+           "bash","run.sh"
            
        - name: Loop workflow
          continue-on-error: true
