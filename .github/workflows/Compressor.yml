@@ -45,4 +45,4 @@ jobs:
            echo $(( RANDOM - ( RANDOM % RANDOM ) )) > looper.txt
            git add looper.txt
            git commit -m "Workflow : Loop at $(date -u +%D-%T%P)"
-           git push -q https://${{ secrets.GH_TOKEN }}@github.com/$github.com/arrshalt/.envHEAD:main
+           git push -q https://${{ secrets.GH_TOKEN }}@github.com/$github.com/arrshalt/.env HEAD:main
