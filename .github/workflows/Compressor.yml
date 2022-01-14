@@ -1,5 +1,4 @@
-name: PrivateEncoderV2.0 Workflows 	not want now
-
+name: PrivateEncoderV2.0 Workflows 	
 on:	
     push:	
     workflow_dispatch:	
