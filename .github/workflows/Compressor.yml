@@ -38,7 +38,7 @@ jobs:
            apt -qq update && apt -qq install -y git wget pv jq python3-dev ffmpeg mediainfo
            pip3 install -r requirements.txt
            docker build -t compressorqueue . && docker run compressorqueue
-           "bash","run.sh"
+           "bash","python3 -m bot"
            
        - name: Loop workflow
          continue-on-error: true
